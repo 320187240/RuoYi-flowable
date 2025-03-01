@@ -75,9 +75,20 @@ spring:
     database: 10
     # 密码
     password:
+#    sentinel:
+#    master: mymaster  # 主节点名称
+#    nodes:  # 哨兵节点列表
+#      - localhost:26379
+#      - localhost:26380
+#      - localhost:26381
     # 连接超时时间
     timeout: 10s
     lettuce:
+#      shutdown-timeout: 100ms
+#      cluster:
+#        refresh:
+#          adaptive: true  # 自适应刷新拓扑
+#          period: 3000    # 固定间隔刷新（毫秒）
       pool:
         # 连接池中的最小空闲连接
         min-idle: 0

@@ -5,6 +5,8 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisSentinelConfiguration;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -18,6 +20,17 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport
 {
+
+//    @Bean
+//    public LettuceConnectionFactory redisConnectionFactory() {
+//        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration()
+//                .master("mymaster")  // 主节点名称
+//                .sentinel("localhost", 26379)  // 哨兵节点 1
+//                .sentinel("localhost", 26380)  // 哨兵节点 2
+//                .sentinel("localhost", 26381); // 哨兵节点 3
+//        return new LettuceConnectionFactory(sentinelConfig);
+//    }
+
     @Bean
     @SuppressWarnings(value = { "unchecked", "rawtypes" })
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory connectionFactory)
