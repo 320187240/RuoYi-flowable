@@ -25,9 +25,9 @@ public class RedisConfig extends CachingConfigurerSupport
 //    public LettuceConnectionFactory redisConnectionFactory() {
 //        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration()
 //                .master("mymaster")  // 主节点名称
-//                .sentinel("localhost", 26379)  // 哨兵节点 1
-//                .sentinel("localhost", 26380)  // 哨兵节点 2
-//                .sentinel("localhost", 26381); // 哨兵节点 3
+//                .sentinel("172.25.0.1", 26379)  // 哨兵节点 1
+//                .sentinel("172.25.0.1", 26380)  // 哨兵节点 2
+//                .sentinel("172.25.0.1", 26381); // 哨兵节点 3
 //        return new LettuceConnectionFactory(sentinelConfig);
 //    }
 

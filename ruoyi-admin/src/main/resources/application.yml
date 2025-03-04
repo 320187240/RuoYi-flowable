@@ -77,14 +77,11 @@ spring:
     password:
 #    sentinel:
 #    master: mymaster  # 主节点名称
-#    nodes:  # 哨兵节点列表
-#      - localhost:26379
-#      - localhost:26380
-#      - localhost:26381
+#    nodes: 172.25.0.1:26379,172.25.0.1:26380,172.25.0.1:26381
     # 连接超时时间
     timeout: 10s
     lettuce:
-#      shutdown-timeout: 100ms
+      shutdown-timeout: 100ms
 #      cluster:
 #        refresh:
 #          adaptive: true  # 自适应刷新拓扑
